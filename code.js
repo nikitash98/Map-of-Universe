@@ -6,13 +6,17 @@ $(window).scroll(function() {
     var bottomofwindow = $(window).scrollTop() + $(window).height();
     var topofwindow = $(window).scrollTop();
     var windowheight = $(window).height();
-    var barPos = $(".the_bar").offset().top - $(".galaxy_image").offset().top
+    var barPos = $(".bar_container").offset().top - $(".galaxy_image").offset().top
     var galaxyHeight = $(".galaxy_image").outerHeight();
+    var over_percentage = (topofwindow - $(".galaxy_image").offset().top)/galaxyHeight;
+    if(over_percentage < 0) {
+        over_percentage = 0;
+    }
     var extragalacticPercentage = (barPos/galaxyHeight - 0.53190975992)/(-0.53190975992)
     var extragalacticDistance = 13.75 * extragalacticPercentage
     $(".counter").html((extragalacticDistance).toFixed(2));
     $(".unit").html("GYR");
-
+    
     var galacticPercentage = 1 -  extragalacticPercentage/(-0.88)
 
     if(extragalacticPercentage < 0) {
@@ -22,6 +26,8 @@ $(window).scroll(function() {
       $(".unit").html("Kilometers");
     }
 
+    $(".view_box").css('top',over_percentage * $(".side_scroll").outerHeight() - $(".side_scroll").outerHeight());
+    $(".view_box").css('height', (windowheight/galaxyHeight) * $(".side_scroll").outerHeight());
 
     /**
     if(location < 0) {
@@ -72,7 +78,7 @@ $(".side_scroll").click(function(e) {
     var relX = e.pageX - parentOffset.left;
     var relY = e.pageY - parentOffset.top;
     var percentClick = relY/$(".side_scroll").outerHeight();
-    var bardist = $(window).scrollTop() - $(".the_bar").offset().top;
+    var bardist = $(window).scrollTop() - $(".bar_container").offset().top;
     $('html, body').animate({
 		scrollTop: $(".galaxy_image").offset().top + $(".galaxy_image").height() * percentClick + bardist
 	}, 500, 'linear');

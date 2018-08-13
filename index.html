@@ -1,44 +1,73 @@
 <!DOCTYPE html>
+<html>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class = "splash_screen" align = "center">
-  <div class = "splash_center">
-    <h1> MAP <br> OF THE<br> UNIVERSE </h1>
-    <button id = "start" type="button" class="btn btn-light">Start at the surface of the Earth</button>
+<div class="splash_screen" align="center">
+    <div class="splash_center">
+        <h1> MAP <br> OF THE<br> UNIVERSE </h1>
+        <button id="start" type="button" class="btn btn-light">Start at the surface of the Earth</button>
 
-  </div>
-</div>
-<div class = " galaxy_container">
-</div>
-<div class = "container-fluid">
-<div class = "row">
-  <div class = "column side" align = "center">
-    <div class = "side_bar">
-      <div class = "big_counter counter"> Number </div>
-      <div class = "big_unit unit"> Unit </div>
-      <div class = "side_scroll"></div>
     </div>
-   </div>
-  <div class = "column other" align = "center">
-    <div class = "main_bar" align = "center">
-      <div class = "bar_container">
-        <div class = "phone_bar">
-          <div class = "the_bar"> </div>
-          <div class = "the_counter counter"> Counter </div>
-          <div class = "the_unit unit"> Unit</div>
-        </div>
-      </div>
-       <img class = "galaxy_image" src= "newcombined.png">
-     </div>
-  </div>
 </div>
+<div class=" galaxy_container">
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="column side" align="center">
+            <div class="side_bar">
+                <div class="big_counter counter"> Number </div>
+                <div class="big_unit unit"> Unit </div>
+                <div class = "side_divider"></div>
+                <div class = "row side_cols">
+                    <div class = "column">
+                        <div class = "side_scroll"></div>
+                        <div class = "view_box"></div>
+
+                    </div>
+                    <div class = "column" id = "positions">
+                        <div class = "location gal_pos" id = "1"> Galaxies</div>
+                        <div class = "location star_pos" id = "2"> Stars</div>
+                        <div class = "location planet_pos" id = "3"> Planets</div>
+                        <div class = "location atmosphere_pos" id = "4"> Atmosphere</div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column other" align="center">
+            <div class="main_bar" align="center">
+                <div class = "image_wrap">
+                <div class="bar_container">
+                    <div class="phone_bar">
+                        <div class="the_bar"> </div>
+                        <div class = "bar_content">
+                        <div class="the_counter counter"> Counter </div>
+                        <div class="the_unit unit"> Unit</div>
+                        </div>
+                    </div>
+                    <div class  = "thing">
+                    <div id = "barone" class = "desktop_bar">
+                    </div>
+                    <div id = "bartwo" class = "desktop_bar two">
+                    </div>
+                    </div>
+                </div>
+                <img class="galaxy_image" src="newcombined.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body>
 
 </body>
-<div class = "divider"> </div>
-<div class = "feedbackbox" align = "center">
-  <h1> Please give us feedback! </h1>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrbX92tzl3zuZTE4xW7qAPmFCJ02F4kiDs4d6OPgYUK7nlKA/viewform?embedded=true" width="80%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<div class="divider"> </div>
+<div class="feedbackbox" align="center">
+    <h1> Please give us feedback! </h1>
+    <h2> Changes to come. </h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrbX92tzl3zuZTE4xW7qAPmFCJ02F4kiDs4d6OPgYUK7nlKA/viewform?embedded=true" width="80%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </div>
 
 </html>
@@ -52,4 +81,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="index.css" type="text/css">
 <script src="code.js"></script>
-

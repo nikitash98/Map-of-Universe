@@ -43,6 +43,9 @@ body {
     position: relative;
     left: 0%;
     max-width: 1000px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
 }
 
 .bar {
@@ -59,19 +62,23 @@ body {
 
 .the_bar {
     background-color: white;
-    height: 3px;
+    height: 1px;
     width: 100px;
 }
 
 .the_counter {
     color: white;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: bold;
+    background: black;
+    width: 50px;
 }
 
 .the_unit {
-    font-size: 15px;
+    font-size: 8px;
     font-weight: bold;
+    background: black;
+    width: 50px;
 }
 
 .bar_container {
@@ -81,10 +88,12 @@ body {
     height: 0px;
     z-index: 100;
 }
-
+.bar_content {
+    margin: 5px;
+}
 .feedbackbox {
     padding: 30px;
-    padding-top: 100px;
+    color: white;
 }
 
 .column {
@@ -118,19 +127,33 @@ body {
     display: none;
     position: sticky;
     position: -webkit-sticky;
-    top: 20%;
+    top: 5%;
     color: white;
     padding: 30px;
 }
 
 .side_scroll {
+    
     background: white;
+    cursor: pointer;
+    height: 500px;
+    margin-left: 45%;
+    margin-right: 45%;
+    /**
     height: 500px;
     width: 10px;
     margin: 30px;
-    cursor: pointer;
+    */
 }
-
+.view_box{
+    background: gray;
+    height: 100px;
+    top: -250px;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    z-index: -3;
+}
 .galaxy_container {
     background: yellow;
 }
@@ -144,15 +167,78 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
-
-.divider {
-    height: 10px;
+.side_divider {
+    height: 2px;
     background: white;
     margin: 10px;
-    margin-top: 200px;
+
+}
+.divider {
+    height: 2px;
+    background: white;
+    margin: 10px;
+    margin-top: 50px;
+}
+.desktop_bar {
+    background: white;
+    width: 40px;
+    height: 1px;
+    float: left;
+    display: none;
+}
+#barone {
+    float: left;
+}
+#bartwo {
+    float: right;
+}
+.image_wrap{
+    max-width: 800px;
+}
+.location {
+    position: absolute;
+    left: 55%;
 }
 
-@media only screen and (min-width: 1400px) {
+#positions {
+    font-size: 15px;
+    text-align: left;
+    padding: 5px;
+}
+.side_cols {
+    margin: 20px;
+}
+#clickable {
+    background: red;
+}
+.feedbackbox h1 {
+    font-weight: bold;
+    font-family: "Futura"
+}
+.feedbackbox h2 {
+    margin: 20px;
+    
+    font-weight: bold;
+    font-size: 25px;
+    font-family: "Helvetica"
+}
+.gal_pos {
+    top:350px;
+}
+.star_pos {
+    top: 450px;
+}
+.atmosphere_pos {
+    top: 550px;
+}
+.planet_pos {
+    top:500px;
+}
+#other { 
+    background: blue;
+    top: 500px;
+}
+@media only screen and (min-width: 800px) {
     .side_bar {
         display: inline-block;
     }
@@ -163,6 +249,12 @@ body {
         width: 80%;
     }
     .side {
+        display: inline-block;
+    }
+    .phone_bar{
+        display: none;
+    }
+    .desktop_bar {
         display: inline-block;
     }
 }
