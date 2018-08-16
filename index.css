@@ -134,11 +134,12 @@ body {
 
 .side_scroll {
     
-    background: white;
+    background: grey;
     cursor: pointer;
     height: 500px;
     margin-left: 45%;
     margin-right: 45%;
+    min-width: 10px;
     /**
     height: 500px;
     width: 10px;
@@ -146,13 +147,16 @@ body {
     */
 }
 .view_box{
-    background: gray;
+    background: white;
+    background: white;
     height: 100px;
     top: -250px;
     position: relative;
-    margin-left: 30%;
-    margin-right: 30%;
-    z-index: -3;
+    margin-left: 45%;
+    margin-right: 45%;
+    min-width: 10px;
+
+    z-index: 3;
 }
 .galaxy_container {
     background: yellow;
@@ -198,8 +202,14 @@ body {
 .location {
     position: absolute;
     left: 55%;
-}
+    cursor: pointer;
+    color: gray;
 
+}
+.location:hover{
+    color: white;
+
+}
 #positions {
     font-size: 15px;
     text-align: left;

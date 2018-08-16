@@ -1,5 +1,8 @@
 $(document).ready(function(){
+
+
 });
+var positions = [0, 0.145, 0.30, 0.47, 0.59, .97]
 
 $(window).scroll(function() {
     //Need the position of the window in the code.
@@ -28,7 +31,11 @@ $(window).scroll(function() {
 
     $(".view_box").css('top',over_percentage * $(".side_scroll").outerHeight() - $(".side_scroll").outerHeight());
     $(".view_box").css('height', (windowheight/galaxyHeight) * $(".side_scroll").outerHeight());
+    $( ".location" ).each(function( index ) {
+      $( this ).css('top', $(".side_scroll").position().top - 20 + (1-positions[positions.length - 1 - index]) * $(".side_scroll").height());
+    });
 
+    console.log($(".side_scroll").position().top)
     /**
     if(location < 0) {
         var newloc = barpos - ($(".galaxies").offset().top + ($(".galaxies").outerHeight() ));
@@ -70,7 +77,12 @@ $(window).scroll(function() {
 $("#start").click(function(e){
     $('html, body').animate({
 		scrollTop: $(".galaxy_image").offset().top + $(".galaxy_image").outerHeight() - $(window).height() * 0.8
-	}, 2000, 'linear');
+	}, 5000, 'linear');
+});
+$(".location").click(function(e){
+    $('html, body').animate({
+		scrollTop: $(".galaxy_image").offset().top + $(".galaxy_image").outerHeight() * (1-positions[(positions.length-1) - (this.id - 1)]) - $(window).height() * 0.8
+	}, 1000, 'linear');
 });
 
 $(".side_scroll").click(function(e) {
