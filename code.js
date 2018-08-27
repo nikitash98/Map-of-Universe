@@ -31,33 +31,34 @@ $(".sidebar_button").click(function(e){
 
         $('.other').animate({width: tableWidth * 0.55 + 'px'}, function() {
              set_positions();
+            $('.right_box').fadeIn("fast");
+            $('.info').css('width', '20%');
+            $('.other').css('width', '55%');
 
         });
 
         $('.info').animate({width: '20%'});
-        $('.right_box').fadeIn();
 
         //$('.right_box').animate({width: '100%'});
-        //$('.info').css('width', '20%');
-        //$('.other').css('width', '55%');
         //$('.right_box').css('width', '100%');
         $(".sidebar_button").html("&rarr;")
         
     } else {
         wthSelected = 10
         var tableWidth = $(window).width();
+        $('.right_box').fadeOut("fast");
 
         $('.other').animate({width: tableWidth * 0.8 + 'px'}, function() {
             set_positions();
+            $('.other').css('width', '80%');
+            $('.info').css('width', '0px');
+
         });
 
         $('.info').animate({width: '0%'});
-        $('.right_box').fadeOut();
 
         //$('.right_box').animate({width: '0%'});
         
-        //$('.other').css('width', '80%');
-        //$('.info').css('width', '0px');
         //$('.right_box').css('width', '0px');
         $(".sidebar_button").html("&larr;")
 
@@ -116,8 +117,15 @@ $(".side_scroll").click(function(e) {
 
 
 $( window ).resize(function() {
-    set_positions();
+    if($(".info").css("display") == 'none') {
+        $('.info').attr('style', '');
+        $('.info').children().attr('style', '');
 
+        $('.other').attr('style', '');
+        toggle = false;
+    }
+
+    set_positions();
   $( "#log" ).append( "<div>Handler for .resize() called.</div>" );
 });
 
