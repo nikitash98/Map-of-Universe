@@ -119,6 +119,16 @@ body {
     position: relative;
     display: none;
 }
+.sidebar_button {
+    background: black;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 30%;
+    width: 30px;
+    margin-left: -50px;
+    padding: 10px;
+    cursor: pointer;
+}
 /* Clear floats after the columns */
 
 .row:after {
@@ -127,7 +137,8 @@ body {
     clear: both;
 }
 .right_box{
-    height: 300px;
+    height: auto;
+    overflow: hidden;
     position: absolute;
 }
 .right_title {
@@ -152,8 +163,24 @@ body {
     top: 5%;
     color: white;
     padding: 30px;
-}
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 
+}
+.test_stick {
+    top: 0px;
+    height: 800px;
+    position: sicky;
+    position: -webkit-sticky;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translateZ(0);
+    padding: 20px;
+    -webkit-backface-visibility: hidden;
+
+}
+.test_stick > * {
+    -webkit-transform: translateZ(0);
+}
 .side_scroll {
     
     background: grey;
@@ -161,11 +188,6 @@ body {
     height: 500px;
     width: 100%;
     min-width: 10px;
-    /**
-    height: 500px;
-    width: 10px;
-    margin: 30px;
-    */
 }
 .view_box{
     background: white;
@@ -229,7 +251,7 @@ body {
     left: 20%;
     cursor: pointer;
     color: gray;
-    font-size: 1vw;
+    font-size: 11px;
     font-family: "Futura";
     white-space: nowrap;
 
@@ -249,7 +271,8 @@ body {
     position: relative;
 }
 #sider {
-    width: 10%;
+    width: 6%;
+    max-width: 20px;
 }
 #clickable {
     background: red;
