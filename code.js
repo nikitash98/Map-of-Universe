@@ -26,19 +26,25 @@ $("#start").click(function(e){
 });
 var toggle = false;
 $(".sidebar_button").click(function(e){
+    var currentScroll = $(window).scrollTop();
+    var scrollPercent = (currentScroll - $(".galaxy_image").offset().top)/$(".galaxy_image").outerHeight();
+    var origheight = $(".galaxy_image").outerHeight();
     if(toggle) {
         var tableWidth = $(window).width();
-
-        $('.other').animate({width: tableWidth * 0.55 + 'px'}, function() {
+        
+        $('.other').animate({width: tableWidth * 0.55 + 'px'}, {duration: 200, queue:false}, function() {
              set_positions();
-            $('.right_box').fadeIn("fast");
             $('.info').css('width', '20%');
             $('.other').css('width', '55%');
-
+            console.log($(".galaxy_image").outerHeight()/ origheight);
         });
+        
+        $('html, body').animate({
+            scrollTop: $(".galaxy_image").offset().top + $(".galaxy_image").height() * .685 * scrollPercent
+        }, {duration: 200, queue:false});
+        $('.right_box').fadeIn("fast");
 
         $('.info').animate({width: '20%'});
-
         //$('.right_box').animate({width: '100%'});
         //$('.right_box').css('width', '100%');
         $(".sidebar_button").html("&rarr;")
@@ -46,21 +52,28 @@ $(".sidebar_button").click(function(e){
     } else {
         wthSelected = 10
         var tableWidth = $(window).width();
-        $('.right_box').fadeOut("fast");
 
-        $('.other').animate({width: tableWidth * 0.8 + 'px'}, function() {
+        $('.other').animate({width: tableWidth * 0.8 + 'px'}, {duration: 200, queue:false}, function() {
+            //$('.right_box').fadeOut("fast");
+            //$('.right_box').css('opacity', '0.0');
+
             set_positions();
             $('.other').css('width', '80%');
             $('.info').css('width', '0px');
-
         });
-
+        
+        $('html, body').animate({
+            scrollTop: $(".galaxy_image").offset().top + $(".galaxy_image").height() * 1.456 * scrollPercent
+        }, {duration: 200, queue:false});
+        
         $('.info').animate({width: '0%'});
+        $('.right_box').fadeOut("fast");
 
         //$('.right_box').animate({width: '0%'});
         
         //$('.right_box').css('width', '0px');
-        $(".sidebar_button").html("&larr;")
+        $(".sidebar_button").html("&larr;");
+
 
     }
     toggle = !toggle;

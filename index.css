@@ -118,14 +118,17 @@ body {
     color: white;
     position: relative;
     display: none;
+    margin-left: 15px;
 }
 .sidebar_button {
     background: black;
     position: sticky;
     position: -webkit-sticky;
     top: 30%;
-    width: 30px;
-    margin-left: -50px;
+    font-size: 20px;
+    text-align: right;
+    width: 15px;
+    margin-left: -35px;
     padding: 10px;
     cursor: pointer;
     z-index: 300;
